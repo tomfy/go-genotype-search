@@ -40,13 +40,12 @@ index := 0
 		if r.MatchString(line) { /* >id line */
 	match_strings := r.FindStringSubmatch(line)
 			index_id[index] = match_strings[1]
-			id_index[match_strings[1]] = index
-			index++
-	
+			id_index[match_strings[1]] = index	
 			fmt.Println(match_strings[1])
 		} else { /* sequence line */
 			sequences1 = append(sequences1, line)
 			fmt.Printf("   [%s]\n", line)
+			index++
 		}
 	}
 
